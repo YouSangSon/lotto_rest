@@ -1,0 +1,3 @@
+- push-repositry
+    - docker exec -it my-registry bin/registry garbage-collect /etc/docker/registry/config.yml 을 해도 repository가 삭제되지 않음
+    - ./gradlew jib -PjibTag=$tag에서 tag가 안됌 -> latest로만 빌드
