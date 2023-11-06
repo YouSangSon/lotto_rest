@@ -1,6 +1,8 @@
 package yousang.lotto_rest.dto
 
-import java.time.LocalDate
+import java.math.BigDecimal
+import java.math.BigInteger
+import java.sql.Date
 
 
 data class ApiResponse(
@@ -26,22 +28,25 @@ data class LottoNumberResult(
 )
 
 data class LottoPredictNumberResult(
-    val predictDrwNo: Int,
+    val predictDrwNo: Int? = null,
     val drwtNo1: Int,
     val drwtNo2: Int,
     val drwtNo3: Int,
     val drwtNo4: Int,
     val drwtNo5: Int,
     val drwtNo6: Int,
+    val predictPer: BigDecimal? = null,
+    val predictEpoch: BigInteger? = null
 )
 
 data class AnnuityLotteryWinningNumbers(
     val group: Int,
     val nums: List<Int>
 )
+
 data class AnnuityLotteryResult(
     val roundNum: Int,
-    val drawDate: LocalDate,
+    val drawDate: Date,
     val winNums: AnnuityLotteryWinningNumbers,
     val bonusNums: List<Int>
 )
